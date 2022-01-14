@@ -26,7 +26,12 @@ If you don't have an Android device available to test with, we recommend using t
 [ -d "$HOME/Library/Android/sdk" ] && ANDROID_SDK=$HOME/Library/Android/sdk || ANDROID_SDK=$HOME/Android/Sdk
 echo "export ANDROID_SDK=$ANDROID_SDK" >> ~/`[[ $SHELL == *"zsh" ]] && echo '.zshenv' || echo '.bash_profile'`
 ```
+- If you are using Ubuntu add an environment variable pointing to the Android SDK location in `~/.profile` - eg. `export ANDROID_SDK=/home/username/Android/Sdk`. Copy and paste these two lines to do this automatically for Bash and Zsh:
 
+```bash
+[ -d "/home/username/Android/Sdk" ] && ANDROID_SDK=/home/username/Android/Sdk|| ANDROID_SDK=/home/username/Android/Sdk
+echo "export ANDROID_SDK=$ANDROID_SDK" >> ~/`[[ $SHELL == *"zsh" ]] && echo '.zshenv' || echo '.profile'`
+```
 - On macOS, you will also need to add `platform-tools` to your `~/.bash_profile` (or `~/.zshenv` if you use Zsh) - eg. `export PATH=/your/path/here:$PATH`. Copy and paste this line to do this automatically for Bash and Zsh:
 
 ```bash
